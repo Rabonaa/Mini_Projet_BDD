@@ -1,4 +1,5 @@
 # Mini_Projet_BDD
+<img width="1352" height="811" alt="screenshot_pjbdd" src="https://github.com/user-attachments/assets/add39643-f759-4f16-88db-b52176575015" />
 
 Règles de gestion et dictionnaire de données utilisées générées par l'IA Générative avec le prompt suivant :
 
