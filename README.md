@@ -17,42 +17,41 @@ Voici alors ce que l'IA a généré :
 
 - Un client peut être particulier ou professionnel (entreprise, hôtel, restaurant…)
 - Un client est identifié par son adresse e-mail, qui est unique
-- Un client peut posséder plusieurs adresses de livraison enregistrées dans son compte
-- Un client peut enregistrer plusieurs moyens de paiement dans son espace personnel
-- Un client dispose d'un historique de toutes ses commandes passées
+- Un client possède une adresse de livraison et un moyen de paiement enregistrés dans son compte
+- Un client dispose d'un historique de ses commandes passées
 - Un client peut s'abonner à un programme de fidélité lui permettant d'accumuler des points
+- Un client peut souscrire à zéro ou un abonnement actif à la fois
+- Un client peut faire zéro ou plusieurs demandes au service client
+- Un client peut passer zéro ou plusieurs commandes
 
 **Produits**
 
-- L'entreprise vend trois catégories de produits : les capsules, les machines à café et les accessoires
-- Une capsule est caractérisée par un nom, une intensité (de 1 à 13), un type d'arôme, un volume de tasse compatible (espresso, lungo, mug…) et un conditionnement (nombre de capsules par boîte)
-- Une machine à café est caractérisée par une couleur, une pression en bars, une capacité du réservoir d'eau et une compatibilité avec certaines gammes de capsules
-- Un accessoire (tasse, mug, mousseur…) est caractérisé par une matière, une contenance et une couleur
-- Chaque produit possède une référence unique, un nom commercial, un prix unitaire TTC et un statut (disponible, en rupture, discontinué)
-- Un produit peut appartenir à une collection ou une édition limitée
+- L'entreprise vend trois catégories de produits : les capsules de café, les machines à café et les accessoires
+- Chaque produit est identifié par une référence unique et est caractérisé par un type et un statut de disponibilité
+- Une capsule de café est caractérisée par un nom, un prix, un type d'arôme, une disponibilité et une intensité (de 1 à 13)
+- Une machine à café est caractérisée par un nom, un prix, une disponibilité, une capacité de réservoir, une couleur, une pression et une compatibilité avec certaines gammes de capsules
+- Un accessoire est caractérisé par un nom, une couleur, une disponibilité et un prix
+- Un produit est obligatoirement soit une capsule, soit une machine à café, soit un accessoire
 
 **Commandes**
 
-- Une commande est passée par un client authentifié ou, pour les achats ponctuels, par un client invité
-- Une commande peut contenir plusieurs produits de catégories différentes, en quantités variables
-- Chaque commande est associée à une adresse de livraison et à un mode de paiement
-- Une commande a un statut qui évolue : en attente de validation, confirmée, en préparation, expédiée, livrée, annulée, retournée
-- Un numéro de suivi de transporteur est associé à la commande dès son expédition
-- Une commande peut être le résultat d'un abonnement récurrent (livraison automatique à fréquence choisie)
+- Une commande est passée par un client ; un client peut passer plusieurs commandes
+- Une commande peut contenir un ou plusieurs produits
+- Un produit peut être contenu dans zéro ou plusieurs commandes
+- Une commande possède un statut, un numéro de suivi et une liste de produits commandés
 
 **Abonnements**
 
-- Un client peut souscrire à un abonnement pour recevoir automatiquement des capsules à intervalles réguliers (toutes les 2, 4, 6 ou 8 semaines)
-- Un abonnement porte sur un ou plusieurs produits avec une quantité définie pour chaque
-- Un abonnement peut être suspendu, modifié ou résilié par le client à tout moment
-- Un abonnement a une date de début et, le cas échéant, une date de fin
+- Un client peut souscrire à zéro ou un abonnement
+- Un abonnement est souscrit par zéro ou plusieurs clients
+- Un abonnement est caractérisé par une date de début, une date de fin et un type
+- Un abonnement correspond obligatoirement à une machine à café
+- Un abonnement peut inclure une ou plusieurs capsules de café
 
-**Boutiques et service client**
+**Service client**
 
-- L'entreprise dispose de boutiques physiques, chacune associée à une ville, une adresse et des horaires d'ouverture
-- Un client peut réserver un rendez-vous en boutique pour un essai de machine ou un conseil personnalisé
-- Une réservation est associée à un client, une boutique, une date et un créneau horaire
-- Le service client enregistre les demandes de contact (type de demande, message, statut de traitement)
+- Un client peut faire zéro ou plusieurs demandes au service client
+- Une demande de service client est associée à une date et un type de service après-vente
 
 ---
 
@@ -60,38 +59,47 @@ Voici alors ce que l'IA a généré :
 
 | Signification de la donnée | Type | Taille |
 |---|---|---|
-| Adresse e-mail du client | Alphanumérique | 100 caractères |
-| Mot de passe du client (haché) | Alphanumérique | 255 caractères |
-| Prénom du client | Alphabétique | 50 caractères |
+| Identifiant unique du client | Numérique | 10 chiffres |
 | Nom du client | Alphabétique | 50 caractères |
+| Prénom du client | Alphabétique | 50 caractères |
+| Adresse e-mail du client | Alphanumérique | 100 caractères |
 | Numéro de téléphone du client | Numérique | 15 chiffres |
-| Type de client (particulier / professionnel) | Alphabétique | 15 caractères |
-| Nom de l'entreprise (si client professionnel) | Alphanumérique | 100 caractères |
-| Adresse postale de livraison (rue et numéro) | Alphanumérique | 150 caractères |
-| Code postal de livraison | Numérique | 5 chiffres |
-| Ville de livraison | Alphabétique | 80 caractères |
-| Pays de livraison | Alphabétique | 60 caractères |
-| Solde de points de fidélité du client | Numérique | 6 chiffres |
-| Référence unique du produit | Alphanumérique | 20 caractères |
-| Nom commercial du produit | Alphanumérique | 100 caractères |
-| Catégorie du produit (capsule / machine / accessoire) | Alphabétique | 15 caractères |
-| Prix unitaire TTC du produit | Numérique décimal | 7 chiffres (2 décimales) |
-| Statut du produit (disponible, rupture, discontinué) | Alphabétique | 15 caractères |
+| Type de client | Alphabétique | 50 caractères |
+| Adresse de livraison du client | Alphanumérique | 50 caractères |
+| Moyen de paiement du client | Alphanumérique | 20 caractères |
+| Historique des commandes du client | Alphanumérique | 100 caractères |
+| Nombre d'abonnements du client | Numérique | 5 chiffres |
+| Points de fidélité du client | Numérique | 10 chiffres |
+| Identifiant unique du produit | Numérique | 10 chiffres |
+| Disponibilité du produit | Alphabétique | 20 caractères |
+| Type de produit | Alphabétique | 30 caractères |
+| Identifiant unique de la capsule de café | Numérique | 10 chiffres |
+| Nom de la capsule de café | Alphabétique | 20 caractères |
+| Disponibilité de la capsule | Alphabétique | 20 caractères |
+| Prix de la capsule | Numérique décimal | 15 chiffres |
+| Type / arôme de la capsule | Alphabétique | 20 caractères |
 | Intensité de la capsule | Numérique | 2 chiffres |
-| Volume de tasse compatible (espresso, lungo…) | Alphabétique | 20 caractères |
-| Nombre de capsules par boîte | Numérique | 3 chiffres |
-| Numéro de commande | Alphanumérique | 20 caractères |
-| Date de passation de la commande | Date | 10 caractères |
+| Identifiant unique de la machine à café | Numérique | 10 chiffres |
+| Nom de la machine à café | Alphabétique | 30 caractères |
+| Disponibilité de la machine | Alphabétique | 20 caractères |
+| Prix de la machine | Numérique décimal | 15 chiffres |
+| Capacité du réservoir de la machine | Numérique décimal | 15 chiffres |
+| Couleur de la machine | Alphabétique | 20 caractères |
+| Pression de la machine | Numérique décimal | 15 chiffres |
+| Compatibilité de la machine avec les gammes de capsules | Alphabétique | 20 caractères |
+| Identifiant unique de l'accessoire | Numérique | 10 chiffres |
+| Nom de l'accessoire | Alphabétique | 50 caractères |
+| Couleur de l'accessoire | Alphabétique | 20 caractères |
+| Disponibilité de l'accessoire | Alphabétique | 20 caractères |
+| Prix de l'accessoire | Numérique décimal | 15 chiffres |
+| Identifiant unique de la commande | Numérique | 10 chiffres |
+| Produits inclus dans la commande | Alphanumérique | 100 caractères |
 | Statut de la commande | Alphabétique | 20 caractères |
-| Numéro de suivi du transporteur | Alphanumérique | 30 caractères |
-| Quantité d'un produit dans la commande | Numérique | 4 chiffres |
-| Fréquence de l'abonnement (en semaines) | Numérique | 2 chiffres |
+| Numéro de suivi du transporteur | Numérique | 10 chiffres |
+| Identifiant unique de l'abonnement | Numérique | 10 chiffres |
 | Date de début de l'abonnement | Date | 10 caractères |
-| Statut de l'abonnement (actif, suspendu, résilié) | Alphabétique | 15 caractères |
-| Nom de la boutique | Alphanumérique | 100 caractères |
-| Adresse de la boutique | Alphanumérique | 150 caractères |
-| Ville de la boutique | Alphabétique | 80 caractères |
-| Horaires d'ouverture de la boutique | Alphanumérique | 200 caractères |
-| Date de la réservation en boutique | Date | 10 caractères |
-| Créneau horaire de la réservation | Alphanumérique | 10 caractères |
-| Type de demande au service client | Alphabétique | 50 caractères |
+| Date de fin de l'abonnement | Date | 10 caractères |
+| Type de l'abonnement | Alphanumérique | 50 caractères |
+| Date de la demande au service client | Date | 10 caractères |
+| Identifiant unique de la demande service client | Numérique | 10 chiffres |
+| Type de service après-vente | Alphanumérique | 50 caractères |
