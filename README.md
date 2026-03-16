@@ -107,8 +107,7 @@ Voici alors ce que l'IA a généré :
 
 SCENARIO D'UTILISATION 
 
-Rôle : Chargé de gestion commerciale - Antoine Dupont
-Antoine travaille au sein du département commercial de KafeKalite. Il a besoin d'interroger régulièrement la base de données pour suivre l'activité de l'entreprise et prendre des décisions.
+Rôle : Chargé de gestion commerciale - Antoine Dupont travaille au sein du département commercial de KafeKalite. Il a besoin d'interroger régulièrement la base de données pour suivre l'activité de l'entreprise et prendre des décisions.
 
 Ce qu'Antoine va faire:
 
