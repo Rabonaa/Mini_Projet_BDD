@@ -103,3 +103,17 @@ Voici alors ce que l'IA a généré :
 | Date de la demande au service client | Date | 10 caractères |
 | Identifiant unique de la demande service client | Numérique | 10 chiffres |
 | Type de service après-vente | Alphanumérique | 50 caractères |
+
+
+SCENARIO D'UTILISATION 
+
+Rôle : Chargé de gestion commerciale - Antoine Dupont
+Antoine travaille au sein du département commercial de KafeKalite. Il a besoin d'interroger régulièrement la base de données pour suivre l'activité de l'entreprise et prendre des décisions.
+
+Ce qu'Antoine va faire:
+
+Il commence par consulter le catalogue produits : il vérifie les prix des capsules Volluto et Arpeggio, identifie les machines entre 100 et 150€, et repère les produits disponibles ou en rupture de stock afin d'anticiper les réassorts.
+Il analyse ensuite les commandes en cours : il consulte les commandes expédiées ou en cours de livraison pour suivre l'activité logistique, et vérifie les abonnements qui arrivent à échéance entre 2024 et 2025 pour anticiper les renouvellements.
+Il s'intéresse ensuite aux clients : il identifie les clients professionnels pour les relancer commercialement, repère les clients les plus fidèles (plus de 100 points) pour leur proposer des offres exclusives, et analyse la répartition particuliers/professionnels ainsi que leurs points de fidélité moyens.
+Il effectue ensuite des  analyses produits : il identifie les capsules disponibles, les machines compatibles Vertuo, et les machines dont le prix dépasse la moyenne pour alimenter le catalogue premium. Il analyse aussi la moyenne des prix par couleur de machine.
+Enfin, il gère le service après-vente : il repère les clients ayant signalé une panne machine pour les recontacter en priorité, vérifie les abonnements liés à des machines disponibles, consulte les produits inclus dans des commandes livrées, et identifie les clients abonnés pour leur proposer des services complémentaires.
